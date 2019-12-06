@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\정재윤\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\정재윤\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_GameJam.234926918.00" t="ExcludeRecursive" />
+    <e p="C:\Users\정재윤\Downloads\MGR-BladeMode-master\GameJam" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="1. Script" t="Include">
+          <e p="Camera" t="Include">
+            <e p="CameraManager.cs" t="Include" />
+          </e>
+          <e p="Enemy" t="Include">
+            <e p="EnemyBase.cs" t="Include" />
+            <e p="IDamageable.cs" t="Include" />
+          </e>
+          <e p="Event" t="Include">
+            <e p="GameEvent.cs" t="Include" />
+            <e p="GameEventListener.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="Controller.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+          </e>
+        </e>
+        <e p="2. Shader" t="Include">
+          <e p="ShowOnlyLight.shader" t="Include" />
+        </e>
+      </e>
+      <e p="GameJam.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
