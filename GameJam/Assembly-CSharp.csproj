@@ -67,23 +67,23 @@
     <Compile Include="Assets\1. Script\Player\Controller.cs" />
     <Compile Include="Assets\1. Script\Player\Player.cs" />
     <None Include="Assets\2. Shader\ShowOnlyLight.shader" />
+    <Reference Include="Cinemachine">
+      <HintPath>C:/Users/정재윤/Documents/GitHub/GameJam/GameJam/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/정재윤/Downloads/MGR-BladeMode-master/GameJam/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/정재윤/Documents/GitHub/GameJam/GameJam/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/정재윤/Downloads/MGR-BladeMode-master/GameJam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/정재윤/Documents/GitHub/GameJam/GameJam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/정재윤/Downloads/MGR-BladeMode-master/GameJam/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/정재윤/Downloads/MGR-BladeMode-master/GameJam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>C:/Users/정재윤/Downloads/MGR-BladeMode-master/GameJam/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>C:/Users/정재윤/Documents/GitHub/GameJam/GameJam/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>C:/Users/정재윤/Downloads/MGR-BladeMode-master/GameJam/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>C:/Users/정재윤/Documents/GitHub/GameJam/GameJam/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/정재윤/Documents/GitHub/GameJam/GameJam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
