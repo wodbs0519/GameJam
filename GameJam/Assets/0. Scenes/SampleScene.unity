@@ -10146,94 +10146,6 @@ Transform:
   m_Father: {fileID: 1637196575}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &597940844
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4641755031310894, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641755031310894, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641755031310894, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.14876008
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641755031310894, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641755031310894, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641755031310894, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641755031310894, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4641755031310894, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 95703816478930006, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 645928d76db0a4f4c9991692b1964bc7,
-        type: 2}
-    - target: {fileID: 212637910518744296, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 212637910518744296, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 6.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 212637910518744296, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 212637910518744296, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61370250359075684, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.40718865
-      objectReference: {fileID: 0}
-    - target: {fileID: 61370250359075684, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 2.6559224
-      objectReference: {fileID: 0}
-    - target: {fileID: 61370250359075684, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.3660304
-      objectReference: {fileID: 0}
-    - target: {fileID: 61370250359075684, guid: f32c0d5bc684e784b90a606605f59ebe,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.8895496
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &604921233
 GameObject:
   m_ObjectHideFlags: 0
@@ -10860,7 +10772,7 @@ MonoBehaviour:
   Capture1: {fileID: 801277506}
   maxSpeed: 3
   accelerationTime: 0.1
-  readyTime: 0.1
+  readyTime: 0
   perfectTime: 0.1
   maxcounterTime: 1
   delayTime: 0.1
@@ -10961,7 +10873,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5000de1bc25bc2f4b80005dae01c359e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11087,7 +10999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c252daba41cda48b6cb850f6ee3d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 114597596041567406, guid: 484fa409c9161d747b35050ae8f1a1b5, type: 2}
+  enemy: {fileID: 114773447095242342, guid: f32c0d5bc684e784b90a606605f59ebe, type: 2}
   minRespawnTime: 0.8
   maxRespawnTime: 2
 --- !u!4 &1455991317
