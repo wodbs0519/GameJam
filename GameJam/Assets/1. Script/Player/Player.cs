@@ -50,15 +50,17 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	public void AttackCheck(Vector2 attackDir, float attackDamage, EnemyType enemyType)
+	public void AttackCheck(float attackDir, float attackDamage, EnemyType enemyType)
 	{
 		var type = _controller.CounterCheck();
 		switch (type)
 		{
 			case AttackType.Counter:
+				Debug.Log("Counter");
 				Counter(false);
 				break;
 			case AttackType.PerfectCounter:
+				Debug.Log("PerfectCounter");
 				if (enemyType == EnemyType.Small)
 				{
 					Counter(false);
@@ -69,6 +71,7 @@ public class Player : MonoBehaviour
 				}
 				break;
 			case AttackType.False:
+				Debug.Log("False");
 				Damaged(attackDir, attackDamage);
 				break;
 			default:
@@ -91,6 +94,10 @@ public class Player : MonoBehaviour
 		else
 		{
 			var hits = Physics2D.OverlapCircleAll(transform.position, attackRadius, attackLayer);
+			if (hits.Length > 0)
+			{
+				CameraManager.Instance.SoftImpulse.GenerateImpulse();
+			}
 			foreach (var hit in hits)
 			{
 				var damageable = hit.GetComponent<IDamageable>();
@@ -100,9 +107,9 @@ public class Player : MonoBehaviour
 		
 	}
 
-	private void Damaged(Vector2 attackDir,float attackDamage)
+	private void Damaged(float attackDir,float attackDamage)
 	{
-		_controller.Bash(attackDir.x * attackDamage);
+		_controller.Bash(attackDir * attackDamage);
 		health -= attackDamage;
 	}
 }

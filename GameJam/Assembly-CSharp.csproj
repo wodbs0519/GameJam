@@ -59,6 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\1. Script\Audio\AudioManager.cs" />
+    <Compile Include="Assets\1. Script\Camera\CameraDepthControll.cs" />
     <Compile Include="Assets\1. Script\Camera\CameraManager.cs" />
     <Compile Include="Assets\1. Script\Enemy\EnemyBase.cs" />
     <Compile Include="Assets\1. Script\Enemy\IDamageable.cs" />
@@ -66,7 +68,15 @@
     <Compile Include="Assets\1. Script\Event\GameEventListener.cs" />
     <Compile Include="Assets\1. Script\Player\Controller.cs" />
     <Compile Include="Assets\1. Script\Player\Player.cs" />
+    <Compile Include="Assets\1. Script\Save\SavePoint.cs" />
+    <Compile Include="Assets\EnemyController.cs" />
+    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\RespawnEnemy.cs" />
     <None Include="Assets\2. Shader\ShowOnlyLight.shader" />
+    <None Include="Assets\2. Shader\DepthScreenShader.shader" />
+    <None Include="Assets\2. Shader\DepthShader.shader" />
+    <None Include="Assets\2. Shader\TransitionShader.shader" />
+    <None Include="Assets\3. Resources\Particle\ParticleAddtivieShader.shader" />
     <Reference Include="Cinemachine">
       <HintPath>C:/Users/정재윤/Documents/GitHub/GameJam/GameJam/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
@@ -7,9 +8,11 @@ public class CameraManager : MonoBehaviour
     public Transform player;
     public Transform target;
 
-    private Vector2 prevPosition;
+    public CinemachineImpulseSource SoftImpulse;
+    public CinemachineImpulseSource HardImpulse;
 
-    public Vector3 dist, shakeDist;
+    private Vector2 prevPosition;
+    
     private Vector3 targetPos, shakePos;
 
     public ParallaxData[] parallaxData;
@@ -36,8 +39,6 @@ public class CameraManager : MonoBehaviour
     {
         mainCam = Camera.main;
         target = player;
-        if (target != null)
-            dist = transform.position - target.position;
 
         prevPosition = transform.position;
 

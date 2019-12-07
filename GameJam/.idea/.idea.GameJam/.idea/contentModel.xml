@@ -1,13 +1,17 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\정재윤\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\정재윤\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_GameJam.234926918.00" t="ExcludeRecursive" />
-    <e p="C:\Users\정재윤\Downloads\MGR-BladeMode-master\GameJam" t="IncludeRecursive">
+    <e p="C:\Users\정재윤\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_GameJam.956040699.00" t="ExcludeRecursive" />
+    <e p="C:\Users\정재윤\Documents\GitHub\GameJam\GameJam" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="1. Script" t="Include">
+          <e p="Audio" t="Include">
+            <e p="AudioManager.cs" t="Include" />
+          </e>
           <e p="Camera" t="Include">
+            <e p="CameraDepthControll.cs" t="Include" />
             <e p="CameraManager.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
@@ -22,10 +26,24 @@
             <e p="Controller.cs" t="Include" />
             <e p="Player.cs" t="Include" />
           </e>
+          <e p="Save" t="Include">
+            <e p="SavePoint.cs" t="Include" />
+          </e>
         </e>
         <e p="2. Shader" t="Include">
+          <e p="DepthScreenShader.shader" t="Include" />
+          <e p="DepthShader.shader" t="Include" />
           <e p="ShowOnlyLight.shader" t="Include" />
+          <e p="TransitionShader.shader" t="Include" />
         </e>
+        <e p="3. Resources" t="Include">
+          <e p="Particle" t="Include">
+            <e p="ParticleAddtivieShader.shader" t="Include" />
+          </e>
+        </e>
+        <e p="EnemyController.cs" t="Include" />
+        <e p="GameManager.cs" t="Include" />
+        <e p="RespawnEnemy.cs" t="Include" />
       </e>
       <e p="GameJam.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
