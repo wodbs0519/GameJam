@@ -72,8 +72,8 @@
         <option value="$PROJECT_DIR$/Assets/1. Script/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/SakuraUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/SakuraUiMaker.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/EnemyBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/SakuraUiMaker.cs" />
       </list>
     </option>
   </component>
@@ -124,7 +124,7 @@
       <updated>1575638303389</updated>
       <workItem from="1575638307719" duration="15592000" />
       <workItem from="1575673659667" duration="44568000" />
-      <workItem from="1575741156053" duration="14589000" />
+      <workItem from="1575741156053" duration="15207000" />
     </task>
     <servers />
   </component>

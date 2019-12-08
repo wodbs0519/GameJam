@@ -15,7 +15,7 @@ public class RespawnEnemy : MonoBehaviour
 		_collider = GetComponent<Collider2D>();
 	}
 
-	private void OnTriggerEnter(Collider other)
+	private void OnTriggerEnter2D(Collider2D other)
 	{
 		Instantiate(enemy, RespawnPoint.position, Quaternion.identity);
 		_collider.enabled = false;

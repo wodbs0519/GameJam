@@ -22,7 +22,12 @@ public class SakuraUiMaker : MonoBehaviour
 
     public void RecoverySakura()
     {
-        
+        var hp = targetEnemy.Health;
+        for (int i = 0; i < hp + 1; i++)
+        {
+            sakuras[i].gameObject.SetActive(true);
+            if(sakuras[i].GetComponent<Animator>().GetCurrentAnimatorStateInfo())
+        }
     }
     
     public void CutSakura()
