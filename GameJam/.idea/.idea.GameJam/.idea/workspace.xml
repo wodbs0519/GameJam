@@ -33,7 +33,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Sannabi_WP/Sannabi/Assets/03.Scritps/Player/RaycastController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. Shader/TransitionShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SakuraUiMaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SakuraUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. Shader/DepthScreenShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Player/Footstep.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Camera/BackgroundRepeat.cs" root0="FORCE_HIGHLIGHTING" />
@@ -69,6 +71,8 @@
         <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/Arrow.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/SakuraUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/SakuraUiMaker.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/EnemyBase.cs" />
       </list>
     </option>
@@ -120,7 +124,7 @@
       <updated>1575638303389</updated>
       <workItem from="1575638307719" duration="15592000" />
       <workItem from="1575673659667" duration="44568000" />
-      <workItem from="1575741156053" duration="12638000" />
+      <workItem from="1575741156053" duration="14589000" />
     </task>
     <servers />
   </component>

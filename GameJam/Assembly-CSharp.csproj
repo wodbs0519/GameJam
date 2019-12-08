@@ -77,6 +77,8 @@
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\ParallaxObj.cs" />
     <Compile Include="Assets\RespawnEnemy.cs" />
+    <Compile Include="Assets\SakuraUI.cs" />
+    <Compile Include="Assets\SakuraUiMaker.cs" />
     <None Include="Assets\2. Shader\ShowOnlyLight.shader" />
     <None Include="Assets\2. Shader\DepthScreenShader.shader" />
     <None Include="Assets\2. Shader\DepthShader.shader" />

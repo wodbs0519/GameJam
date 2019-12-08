@@ -49,6 +49,8 @@
         <e p="GameManager.cs" t="Include" />
         <e p="ParallaxObj.cs" t="Include" />
         <e p="RespawnEnemy.cs" t="Include" />
+        <e p="SakuraUI.cs" t="Include" />
+        <e p="SakuraUiMaker.cs" t="Include" />
       </e>
       <e p="GameJam.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

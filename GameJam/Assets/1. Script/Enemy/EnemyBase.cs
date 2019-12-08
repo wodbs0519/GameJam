@@ -6,6 +6,9 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour, IDamageable
 {
 
+    public Action sakuraCut;
+    public Action sakuraRecovery;
+    
     public string[] Attacks;
     
     public float attackDelay;
@@ -166,6 +169,8 @@ public class EnemyBase : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(dealyTime);
         Debug.Log("Attack Cycle Start");
         Health = startHealth;
+        if(sakuraRecovery!= null)
+            sakuraRecovery();
         int index = 0;
         while (index < Attacks.Length)
         {
@@ -210,6 +215,8 @@ public class EnemyBase : MonoBehaviour, IDamageable
         _animator.Play("Dead");
         StartCoroutine(WaitDead());
         AudioManager.instance.PlaySound(AudioManager.instance.enemyDead);
+        if(sakuraCut!= null)
+            sakuraCut();
     }
 
     IEnumerator WaitDead()
@@ -233,6 +240,8 @@ public class EnemyBase : MonoBehaviour, IDamageable
 
     public void Bashed()
     {
+        if(sakuraCut!= null)
+            sakuraCut();
         _animator.Play("Bashed");
         var targetVector = new Vector3(transform.position.x, transform.position.y, -5f);
         var sakura = Instantiate(Sakura, targetVector, Quaternion.Euler(0, 90 + Mathf.Sign(_targetDir.x) * 90, 0),
