@@ -186,13 +186,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501d402d61750a44a9cea5d469338e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Attacks:
+  - Attack 1
+  - Attack 1
   attackDelay: 1
   attackDamage: 1
   runDist: 6
   attackDist: 4
   walkSpeed: 3
   runSpeed: 5
-  bashAddition: 8
+  bashAddition: 1
   gravity: 4
   CollisionMask:
     serializedVersion: 2
@@ -203,7 +206,7 @@ MonoBehaviour:
   Type: 1
   SkinWidth: 0.15
   accelerationTime: 0.2
-  startHealth: 3
+  startHealth: 1
   Target: {fileID: 0}
   Sakura: {fileID: 198132797574721788, guid: cda67ee33a9321f4cbb072faf57acac6, type: 2}
 --- !u!198 &198183185225753142
@@ -4885,9 +4888,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2139168475
+  m_SortingLayer: 5
+  m_SortingOrder: -1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

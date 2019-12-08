@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
+    public Footstep footstep;
 
     public CameraDepthControll depthControll;
     public float screenDurationTime;
@@ -14,16 +15,14 @@ public class Controller : MonoBehaviour
 
     public RawImage Capture1;
 
-    [Header("Move")]
-    public float maxSpeed;
+    [Header("Move")] public float maxSpeed;
     public float accelerationTime;
 
-    [Header("counter")] 
-    public float readyTime;
+    [Header("counter")] public float readyTime;
     public float perfectTime;
     public float maxcounterTime;
     public float delayTime;
-    
+
     public LayerMask CollisionMask;
 
     public ColliderBounds colliderBounds;
@@ -38,11 +37,11 @@ public class Controller : MonoBehaviour
     public ParticleSystem playerSakura;
 
     public float gravity;
-    
+
     private float _counterTime;
     private bool _iscounter;
     private bool _isDash;
-    
+
     private Animator _animator;
     private SpriteRenderer _renderer;
     private Collider2D _collider;
@@ -52,6 +51,9 @@ public class Controller : MonoBehaviour
     private Vector2 _velocity;
     private Coroutine CounterCoroutine;
     private float _colliderHeight;
+    public float startSlideValue;
+    private float _slideValue;
+    public float decayValue;
 
     private void Awake()
     {
@@ -68,32 +70,51 @@ public class Controller : MonoBehaviour
         colliderBounds = new ColliderBounds(_collider.bounds);
         Falling();
 
-        if (_iscounter || _isDash) return;
-        
+        if (_iscounter || _isDash)
+        {
+            footstep.StopFootstep();
+            if (_isDash)
+            {
+                _slideValue -= Time.deltaTime * decayValue;
+                _slideValue = Mathf.Clamp(_slideValue, 0, 100);
+                float dir = 1;
+                if (_renderer.flipX)
+                {
+                    dir = -1;
+                }
+                transform.Translate(new Vector2(_slideValue * 3 * dir * Time.deltaTime,0));
+            }
+            return;
+        }
+
         var targetVelocity = CalculateVelocity(moveDir);
         _animator.SetBool("Run", true);
         if (moveDir > 0)
         {
+            footstep.StartFootstep();
             _renderer.flipX = false;
-            Effects.localScale = new Vector3(1,1,1);
+            Effects.localScale = new Vector3(1, 1, 1);
         }
-        else if(moveDir < 0)
+        else if (moveDir < 0)
         {
-            Effects.localScale = new Vector3(-1,1,1);
+            footstep.StartFootstep();
+            Effects.localScale = new Vector3(-1, 1, 1);
             _renderer.flipX = true;
         }
         else
         {
+            footstep.StopFootstep();
             _animator.SetBool("Run", false);
             _animator.SetBool("Idle", true);
         }
+
         _velocity = new Vector2(targetVelocity, 0);
         if (!CheckObstacle())
         {
             transform.Translate(new Vector2(_velocity.x, 0) * Time.deltaTime);
         }
     }
-    
+
     private float CalculateVelocity(float h)
     {
         float targetVelocityX = h * maxSpeed;
@@ -107,15 +128,17 @@ public class Controller : MonoBehaviour
         if (_renderer.flipX)
         {
             dir = -1;
-        } 
+        }
         var hit = Physics2D.Raycast(transform.position,Vector2.right * dir, dashRange, CollisionMask);
         Vector2 targetPos = (Vector2)transform.position + new Vector2(dashRange * dir, 0);
-        if (hit.collider.GetComponent<EnemyBase>() == null) targetPos = hit.point;
         transform.position = targetPos;
         playerSakura.Play();
         Camera.main.GetComponent<CinemachineBrain>().enabled = true;
+        _isDash = true;
+        _slideValue = startSlideValue;
+        Debug.Log("dash true");
     }
-    
+
     public void Bash(float bashValue)
     {
         _velocity.x += bashValue * bashAddition;
@@ -133,10 +156,9 @@ public class Controller : MonoBehaviour
 
     IEnumerator ExecuteCounter()
     {
-        
+        AudioManager.instance.PlaySound(AudioManager.instance.feetSword);
         _iscounter = true;
         _counterTime = 0;
-        yield return new WaitForSeconds(readyTime);
         Cross.Play("Cross");
         _animator.Play("Ready");
         while (_counterTime < maxcounterTime)
@@ -144,37 +166,36 @@ public class Controller : MonoBehaviour
             _counterTime += Time.deltaTime;
             yield return null;
         }
+
+        yield return new WaitForSeconds(delayTime);
         _animator.Play("Idle");
         _iscounter = false;
-        yield return new WaitForSeconds(delayTime);
         _counterTime = 0;
     }
 
-    public AttackType CounterCheck()
+    public AttackType CounterCheck(bool isLast)
     {
         AttackType type;
-        if (_counterTime == 0)
+        if (_counterTime == 0 || _counterTime >= maxcounterTime)
         {
-            type =  AttackType.False;
+            type = AttackType.False;
+            return type;
         }
-        else if (_counterTime < perfectTime)
-        {
-            type =  AttackType.PerfectCounter;
-        }
-        else
-        {
-            type = AttackType.Counter;
-        }
+//        else if (_counterTime < perfectTime)
+//        {
+//            type =  AttackType.PerfectCounter;
+//        }
+        
+        type = AttackType.Counter;
+        
         StopCheck();
-        if (type != AttackType.False)
-        {
-            StartCoroutine(DepthScreen(type));
-        }
-        if (type == AttackType.Counter)
+        StartCoroutine(DepthScreen(type, isLast));
+
+        if (!isLast)
         {
             var tempVal = Vector3.one;
             Trail.transform.localScale = tempVal;
-            int a = Random.Range(0,2);
+            int a = Random.Range(0, 2);
             if (a == 0)
             {
                 Trail.Play("Trail");
@@ -184,41 +205,46 @@ public class Controller : MonoBehaviour
                 Trail.Play("Trail2");
             }
         }
+
         return type;
     }
 
-    IEnumerator DepthScreen(AttackType attackType)
+    IEnumerator DepthScreen(AttackType attackType, bool isLast)
     {
-        _isDash = true;
-        if (attackType == AttackType.PerfectCounter)
+        _iscounter = true;
+        
+        AudioManager.instance.PlaySound(AudioManager.instance.swingSword);
+        AudioManager.instance.PlaySound(AudioManager.instance.playerAttack);
+
+        if (isLast)
         {
             Camera.main.GetComponent<CinemachineBrain>().enabled = false;
         }
-        
+
         depthControll.enabled = true;
         _animator.Play("Attack");
         Time.timeScale = 0;
-        yield return  new WaitForSecondsRealtime(timeStopTime);
+        yield return new WaitForSecondsRealtime(timeStopTime);
         Time.timeScale = 1;
 
-//        yield return new WaitForEndOfFrame();
-//        var texture = ScreenCapture.CaptureScreenshotAsTexture();
-//        Capture1.texture = texture;
-
         yield return new WaitForSeconds(screenDurationTime);
-        
+
         _animator.Play("Idle");
-        _isDash = false;
+        _isDash = false;    
+        _iscounter = false;
+        Debug.Log("dash false");
         depthControll.enabled = false;
     }
 
     public void StopCheck()
     {
-        if(CounterCoroutine != null)
+        if (CounterCoroutine != null)
             StopCoroutine(CounterCoroutine);
         _counterTime = 0;
         _iscounter = false;
+        _animator.Play("Idle");
     }
+
     #endregion
 
 
@@ -235,7 +261,7 @@ public class Controller : MonoBehaviour
         else
         {
             float hDist = transform.position.y - hit.point.y;
-            transform.position = (Vector2)transform.position + new Vector2(0, _colliderHeight - hDist);
+            transform.position = (Vector2) transform.position + new Vector2(0, _colliderHeight - hDist);
         }
     }
 
@@ -253,7 +279,7 @@ public class Controller : MonoBehaviour
 
         raycasyOrigin.y += SkinWidth;
         raycasyOrigin.x -= SkinWidth * Mathf.Sign(_velocity.x);
-        
+
         var hit = Physics2D.Raycast(raycasyOrigin, Vector2.right * Mathf.Sign(_velocity.x), 0.2f, CollisionMask);
 
         if (hit.collider != null)
@@ -263,12 +289,8 @@ public class Controller : MonoBehaviour
 
         return false;
     }
-    
-    
-    
 
     #endregion
-   
 }
 
 public struct ColliderBounds
@@ -283,9 +305,7 @@ public struct ColliderBounds
         BottomRight = new Vector2(bounds.max.x, bounds.min.y);
         BottomCenter = new Vector2((BottomLeft.x + BottomRight.x) * 0.5f, BottomLeft.y);
     }
-
 }
-
 
 
 public enum AttackType

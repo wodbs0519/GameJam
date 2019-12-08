@@ -116,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1052531, y: -0.7480111}
+  m_Offset: {x: -0.1052531, y: -0.46912956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -127,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2105062, y: 3.3375673}
+  m_Size: {x: 1.2105062, y: 2.7798042}
   m_EdgeRadius: 0
 --- !u!95 &95789278711544820
 Animator:
@@ -186,13 +186,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501d402d61750a44a9cea5d469338e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: 1
+  Attacks:
+  - Attack 1
+  - Attack 1
+  attackDelay: 0.3
   attackDamage: 1
   runDist: 6
   attackDist: 4
   walkSpeed: 3
   runSpeed: 5
-  bashAddition: 8
+  bashAddition: 1
   gravity: 4
   CollisionMask:
     serializedVersion: 2
@@ -203,7 +206,7 @@ MonoBehaviour:
   Type: 1
   SkinWidth: 0.15
   accelerationTime: 0.2
-  startHealth: 3
+  startHealth: 1
   Target: {fileID: 0}
   Sakura: {fileID: 198132797574721788, guid: cda67ee33a9321f4cbb072faf57acac6, type: 2}
 --- !u!198 &198084399102610720
@@ -4885,15 +4888,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2139168475
+  m_SortingLayer: 5
+  m_SortingOrder: -1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.4666667, y: 7.4666667}
+  m_Size: {x: 5.6, y: 5.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

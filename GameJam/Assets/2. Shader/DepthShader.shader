@@ -7,9 +7,16 @@
 	}
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
-		Cull Off
-		LOD 100
+		Tags
+		{ 
+			"Queue"="Transparent" 
+			"RenderType"="Transparent" 
+			"CanUseSpriteAtlas"="True"
+		}
+
+        Cull Off
+		Lighting Off
+		Blend One OneMinusSrcAlpha
 
 		Pass
 		{
@@ -51,6 +58,7 @@
 				fixed4 col = tex2D(_MainTex, i.uv) * i.color;
 				col *= i.color.a;
 				clip(col.a - 0.01);
+				col *= col.a;
 				return col;
 			}
 			ENDCG
@@ -93,6 +101,7 @@
             float4 frag(v2f i) : SV_Target
             {
                 fixed4 texureColor = tex2D(_MainTex, i.uv);;
+                texureColor *= texureColor.a;
 	            clip(texureColor.a - 0.01);
                 SHADOW_CASTER_FRAGMENT(i)
             }

@@ -12,29 +12,34 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/2. Shader/ShowOnlyLight.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/RespawnEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Sannabi_WP/Sannabi/Assets/03.Scritps/Player/RaycastController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/2. Shader/DepthShader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/2. Shader/TransitionShader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/2. Shader/DepthScreenShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. Script/Enemy/Arrow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Save/SavePoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ArrowMaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/3. Resources/Particle/ParticleAddtivieShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ParallaxObj.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Enemy/EnemyBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Enemy/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Event/GameEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Event/GameEventListener.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Bootleg/Assets/1. Scripts/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Camera/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Bootleg/Assets/1. Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/1. Script/Camera/CameraDepthControll.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/1. Script/Player/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Sannabi_WP/Sannabi/Assets/03.Scritps/Player/Controller2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Sannabi_WP/Sannabi/Assets/03.Scritps/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2. Shader/ShowOnlyLight.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RespawnEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Sannabi_WP/Sannabi/Assets/03.Scritps/Player/RaycastController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2. Shader/TransitionShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2. Shader/DepthScreenShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. Script/Player/Footstep.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. Script/Camera/BackgroundRepeat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Bootleg/Assets/1. Scripts/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Bootleg/Assets/1. Scripts/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/1. Script/Camera/CameraDepthControll.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Sannabi_WP/Sannabi/Assets/03.Scritps/CameraManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -44,22 +49,27 @@
         <option value="$PROJECT_DIR$/Assets/1. Script/Event/GameEventListner.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Event/GameEventListener.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/IDamagable.cs" />
-        <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/IDamageable.cs" />
-        <option value="$PROJECT_DIR$/Assets/1. Script/Camera/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Camera/CameraDepthControll.cs" />
         <option value="$PROJECT_DIR$/Assets/2. Shader/ShowOnlyLight.shader" />
-        <option value="$PROJECT_DIR$/Assets/1. Script/Audio/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/RespawnEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/EnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/1. Script/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Save/SavePoint.cs" />
         <option value="$PROJECT_DIR$/Assets/3. Resources/Particle/ParticleAddtivieShader.shader" />
         <option value="$PROJECT_DIR$/Assets/2. Shader/DepthScreenShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/2. Shader/DepthShader.shader" />
         <option value="$PROJECT_DIR$/Assets/2. Shader/TransitionShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/EnemyBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/1. Script/Camera/BackgroundRepeat.cs" />
+        <option value="$PROJECT_DIR$/Assets/1. Script/Camera/CameraManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/ParallaxObj.cs" />
+        <option value="$PROJECT_DIR$/Assets/2. Shader/DepthShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/1. Script/Audio/AudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/1. Script/Player/Footstep.cs" />
+        <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/IDamageable.cs" />
+        <option value="$PROJECT_DIR$/Assets/ArrowMaker.cs" />
+        <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/Arrow.cs" />
+        <option value="$PROJECT_DIR$/Assets/1. Script/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/1. Script/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/1. Script/Enemy/EnemyBase.cs" />
       </list>
     </option>
   </component>
@@ -109,7 +119,8 @@
       <option name="presentableId" value="Default" />
       <updated>1575638303389</updated>
       <workItem from="1575638307719" duration="15592000" />
-      <workItem from="1575673659667" duration="36241000" />
+      <workItem from="1575673659667" duration="44568000" />
+      <workItem from="1575741156053" duration="12638000" />
     </task>
     <servers />
   </component>
@@ -123,7 +134,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

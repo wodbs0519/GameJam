@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour, IDamageable
 {
+
+    public string[] Attacks;
+    
     public float attackDelay;
     public float attackDamage;
     public float runDist;
@@ -34,27 +37,21 @@ public class EnemyBase : MonoBehaviour, IDamageable
         get { return _health; }
         set
         {
-            var oldValue = _health;
             _health = value;
             if (_health <= 0)
             {
-                Dead();
+                _isLast = true;
             }
-            else if(oldValue > _health)
+            else
             {
-                var targetVector = new Vector3(transform.position.x, transform.position.y, -5f);
-                var sakura = Instantiate(Sakura, targetVector, Quaternion.Euler(0, 90 + Mathf.Sign(_targetDir.x) * 90, 0),
-                    null);
-                sakura.Play();
-                Destroy(sakura.gameObject, 2);
-                Bashed();
+                _isLast = false;
             }
         }
     }
 
     public int startHealth;
 
-    private int _health = 3;
+    private int _health = 0;
     private bool _isAttack;
     private Vector2 _targetDir;
     private Animator _animator;
@@ -64,7 +61,8 @@ public class EnemyBase : MonoBehaviour, IDamageable
     private float _colliderHeight;
     private float velocityXSmoothing = 0;
     private bool _isDead = false;
-
+    private bool _isLast;
+    
     public Transform Target;
     public Action deadCallback;
     public ParticleSystem Sakura;
@@ -74,12 +72,12 @@ public class EnemyBase : MonoBehaviour, IDamageable
     private void Start()
     {
         Target = Player.instance.transform;
-        Health = startHealth;
         _isAttack = false;
         _renderer = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
         _collider = GetComponent<Collider2D>();
         _colliderHeight = transform.position.y - _collider.bounds.min.y;
+        Health = startHealth;
         StartCoroutine(MakeRipple());
     }
 
@@ -126,13 +124,14 @@ public class EnemyBase : MonoBehaviour, IDamageable
             ReadyAttack();
         }
 
-        if (CheckObstacle()) return;
-
         if (_timeCount > 0)
         {
             _timeCount -= Time.deltaTime;
-            Bashed();
         }
+        
+        if (CheckObstacle()) return;
+
+        
 
         if (_isAttack)
         {
@@ -159,28 +158,58 @@ public class EnemyBase : MonoBehaviour, IDamageable
     {
         if (_isAttack || _timeCount > 0) return;
         _isAttack = true;
-        _animator.SetTrigger("Attack");
+        _coroutine = StartCoroutine(AttackCycle());
     }
+
+    IEnumerator AttackCycle(float dealyTime = 0)
+    {
+        yield return new WaitForSeconds(dealyTime);
+        Debug.Log("Attack Cycle Start");
+        Health = startHealth;
+        int index = 0;
+        while (index < Attacks.Length)
+        {
+            _animator.Play(Attacks[index], 0, 0);
+            Debug.Log("Attack " + index);
+            yield return null;
+            yield return new WaitWhile(() =>
+            {
+                var currentInfo = _animator.GetCurrentAnimatorStateInfo(0);
+                return (currentInfo.IsName(Attacks[index]) && currentInfo.normalizedTime < 1);
+            });
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Bashed"))
+            {
+                yield return new WaitWhile(() => _animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1);
+            }
+            index++;
+            Debug.Log("Index Pluse");
+        }
+        _animator.Play("Run");
+        yield return new WaitForSeconds(attackDelay);
+        _isAttack = false;
+        
+    }
+    
 
     public void StartAttack()
     {
-       _coroutine = StartCoroutine(Attack());
+        if (Player.instance.AttackCheck(Mathf.Sign(_targetDir.x), attackDamage, _isLast))
+        {
+            StopCoroutine(_coroutine);
+            _animator.Play("Run");
+            _isAttack = false;
+            _timeCount = 0.5f;
+        }
+        
     }
 
-    IEnumerator Attack()
-    {
-        Player.instance.AttackCheck(Mathf.Sign(_targetDir.x), attackDamage, Type);
-        yield return new WaitForSeconds(attackDelay);
-        _isAttack = false;
-    }
-
-
-    private void Dead()
+    public void Dead()
     {
         _isDead = true;
-        Debug.Log("I'm Dead");
+        StopCoroutine(_coroutine);
         _animator.Play("Dead");
         StartCoroutine(WaitDead());
+        AudioManager.instance.PlaySound(AudioManager.instance.enemyDead);
     }
 
     IEnumerator WaitDead()
@@ -194,17 +223,22 @@ public class EnemyBase : MonoBehaviour, IDamageable
 
     public void Damaged(int damage)
     {
-        if(_coroutine!=null)
-            StopCoroutine(_coroutine);
-        
-        _isAttack = false;
         _timeCount = stunTime;
-        _animator.SetTrigger("Paused");
         Health -= damage;
+        if (Health >= 0)
+        {
+            Bashed();
+        }
     }
 
     public void Bashed()
     {
+        _animator.Play("Bashed");
+        var targetVector = new Vector3(transform.position.x, transform.position.y, -5f);
+        var sakura = Instantiate(Sakura, targetVector, Quaternion.Euler(0, 90 + Mathf.Sign(_targetDir.x) * 90, 0),
+            null);
+        sakura.Play();
+        Destroy(sakura.gameObject, 4);
         _velocity = Mathf.Sign(_targetDir.x) * -bashAddition;
     }
 

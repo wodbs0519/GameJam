@@ -11,10 +11,12 @@
             <e p="AudioManager.cs" t="Include" />
           </e>
           <e p="Camera" t="Include">
+            <e p="BackgroundRepeat.cs" t="Include" />
             <e p="CameraDepthControll.cs" t="Include" />
             <e p="CameraManager.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
+            <e p="Arrow.cs" t="Include" />
             <e p="EnemyBase.cs" t="Include" />
             <e p="IDamageable.cs" t="Include" />
           </e>
@@ -24,6 +26,7 @@
           </e>
           <e p="Player" t="Include">
             <e p="Controller.cs" t="Include" />
+            <e p="Footstep.cs" t="Include" />
             <e p="Player.cs" t="Include" />
           </e>
           <e p="Save" t="Include">
@@ -41,8 +44,10 @@
             <e p="ParticleAddtivieShader.shader" t="Include" />
           </e>
         </e>
+        <e p="ArrowMaker.cs" t="Include" />
         <e p="EnemyController.cs" t="Include" />
         <e p="GameManager.cs" t="Include" />
+        <e p="ParallaxObj.cs" t="Include" />
         <e p="RespawnEnemy.cs" t="Include" />
       </e>
       <e p="GameJam.sln" t="IncludeFlat" />
